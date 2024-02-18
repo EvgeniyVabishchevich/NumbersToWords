@@ -61,14 +61,14 @@ class DutchThousandToWordsConverter
 
   String getThousandsAsWords(int thousands, int other, GenderType genderType) {
     if (other == 0) {
-      return sprintf("%sduizend", asWords(thousands, genderType));
+      return sprintf("%sduizend", [asWords(thousands, genderType)]);
     }
     return sprintf("%sduizend%s",
         [asWords(thousands, genderType), asWords(other, genderType)]);
   }
 
   String getOneThousandAsWords(int other, GenderType genderType) {
-    return sprintf("duizend%s", asWords(other, genderType));
+    return sprintf("duizend%s", [asWords(other, genderType)]);
   }
 
   bool isOneThousand(int thousands) {
