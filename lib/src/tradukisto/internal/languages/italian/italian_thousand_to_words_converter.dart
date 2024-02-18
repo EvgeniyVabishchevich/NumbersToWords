@@ -58,14 +58,14 @@ class ItalianThousandToWordsConverter
 
   String getThousandsAsWords(int thousands, int other, GenderType genderType) {
     if (other == 0) {
-      return sprintf("%smila", asWords(thousands, genderType));
+      return sprintf("%smila", [asWords(thousands, genderType)]);
     }
     return sprintf("%smila%s",
         [asWords(thousands, genderType), asWords(other, genderType)]);
   }
 
   String getOneThousandAsWords(int other, GenderType genderType) {
-    return sprintf("mille%s", asWords(other, genderType));
+    return sprintf("mille%s", [asWords(other, genderType)]);
   }
 
   bool isOneThousand(int thousands) {

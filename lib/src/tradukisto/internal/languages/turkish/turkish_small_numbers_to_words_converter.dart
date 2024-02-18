@@ -57,7 +57,7 @@ class TurkishSmallNumbersToWordsConverter
     int other = value % 1000;
 
     if (other == 0) {
-      return sprintf("%s${separator}Bin", asWords(thousands, genderType));
+      return sprintf("%s${separator}Bin", [asWords(thousands, genderType)]);
     }
     return sprintf("%s${separator}Bin$separator%s",
         [asWords(thousands, genderType), asWords(other, genderType)]);
@@ -65,6 +65,6 @@ class TurkishSmallNumbersToWordsConverter
 
   String oneThousandsAsString(int value, GenderType genderType) {
     int other = value % 1000;
-    return sprintf("Bin$separator%s", asWords(other, genderType));
+    return sprintf("Bin$separator%s", [asWords(other, genderType)]);
   }
 }

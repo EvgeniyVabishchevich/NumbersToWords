@@ -70,7 +70,7 @@ class PortugueseThousandToWordsConverter implements IntegerToStringConverter {
 
   String getThousandsAsWords(int thousands, int other) {
     if (nothingComesAfter(other)) {
-      return sprintf("%s mil", asWords(thousands));
+      return sprintf("%s mil", [asWords(thousands)]);
     }
     if (other == HUNDRED) {
       return sprintf("%s mil e %s", [
