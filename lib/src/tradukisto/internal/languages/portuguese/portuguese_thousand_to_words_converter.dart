@@ -58,7 +58,7 @@ class PortugueseThousandToWordsConverter implements IntegerToStringConverter {
   }
 
   String thousandsAsString(int value) {
-    int thousands = (value / 1000).round();
+    int thousands = (value / 1000).floor();
     int other = value % 1000;
 
     if (isOneThousand(thousands)) {

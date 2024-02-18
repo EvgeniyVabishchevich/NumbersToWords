@@ -3,14 +3,14 @@ import 'package:sprintf/sprintf.dart';
 import '../../converters/hundreds_to_words_converter.dart';
 import '../../converters/number_to_words_converter.dart';
 
-class BulgarianintToWordsConverter extends NumberToWordsConverter {
+class BulgarianIntegerToWordsConverter extends NumberToWordsConverter {
   final String oneThousand;
 
   static final String MERGE_PATTERN = "%s %s";
   static final int ONE_THOUSAND = 1000;
   static final int TWO_THOUSAND = 2000;
 
-  BulgarianintToWordsConverter(
+  BulgarianIntegerToWordsConverter(
       HundredsToWordsConverter super.hundredsToStringConverter,
       super.pluralForms,
       this.oneThousand);

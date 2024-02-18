@@ -15,5 +15,5 @@ void main() {
 
   print(longToStringConverter.asWords(123123213));
   print(doubleToStringConverter.asWords(1232353132.12));
-  print(integerToStringConverter.asWords(123123));
+  print(integerToStringConverter.asWords(500));
 }

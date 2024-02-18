@@ -16,7 +16,7 @@ class GermanIntegerToWordsConverter implements IntegerToStringConverter {
       return exceptions[value];
     }
 
-    int bigNumber = (value / 1000000).round();
+    int bigNumber = (value / 1000000).floor();
     int smallNumber = value % 1000000;
 
     return NumberProcessor(bigNumbersConverter, smallNumbersConverter)

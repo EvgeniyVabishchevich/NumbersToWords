@@ -27,7 +27,7 @@ class TurkishDoubleToBankingMoneyConverter implements DoubleToStringConverter {
     validate(value);
 
     int units = value.toInt();
-    int subunits = ((value - units) * 100).round();
+    int subunits = ((value - units) * 100).floor();
 
     String tempSubunitSymbol = turkishValues.subunitSymbol();
     String tempSubUnitWords = SUBUNIT_SEPARATOR + converter.asWords(subunits)!;

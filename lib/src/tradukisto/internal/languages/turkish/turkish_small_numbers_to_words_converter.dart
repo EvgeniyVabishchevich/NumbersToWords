@@ -53,7 +53,7 @@ class TurkishSmallNumbersToWordsConverter
   }
 
   String greaterThanOneThousandsAsString(int value, GenderType genderType) {
-    int thousands = (value / 1000).round();
+    int thousands = (value / 1000).floor();
     int other = value % 1000;
 
     if (other == 0) {

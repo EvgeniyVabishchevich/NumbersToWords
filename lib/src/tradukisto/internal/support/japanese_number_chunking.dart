@@ -9,7 +9,7 @@ class JapaneseNumberChunking extends NumberChunking {
 
     while (value > 0) {
       result.insert(0, value % JAPANESE_SPLIT_FACTOR);
-      value = (value / JAPANESE_SPLIT_FACTOR).round();
+      value = (value / JAPANESE_SPLIT_FACTOR).floor();
     }
 
     return result;

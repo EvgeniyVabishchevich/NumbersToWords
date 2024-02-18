@@ -15,7 +15,7 @@ class CzechIntegerToWordsConverter implements IntegerToStringConverter {
       return exceptions[value];
     }
 
-    int bigNumber = (value / 1000).round();
+    int bigNumber = (value / 1000).floor();
     int smallNumber = value % 1000;
 
     return NumberProcessor.withintConverter(

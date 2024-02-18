@@ -81,7 +81,7 @@ final class Container {
             bulgarianValues.twoDigitsNumberSeparator());
 
     IntegerToStringConverter integerToStringConverter =
-        BulgarianintToWordsConverter(
+        BulgarianIntegerToWordsConverter(
             hundredsToStringConverter,
             bulgarianValues.pluralForms(),
             bulgarianValues.oneThousandException());

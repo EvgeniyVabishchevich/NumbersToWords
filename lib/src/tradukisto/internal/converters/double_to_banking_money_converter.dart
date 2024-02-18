@@ -25,7 +25,7 @@ class DoubleToBankingMoneyConverter implements DoubleToStringConverter {
     validate(value);
 
     int units = value.toInt();
-    int subunits = ((value - units) * 100).round();
+    int subunits = ((value - units) * 100).floor();
 
     return sprintf(
         FORMAT, [converter.asWords(units), currencySymbol, subunits]);
