@@ -6,7 +6,7 @@ class NumberChunking {
 
     while (value > 0) {
       result.insert(0, value % SPLIT_FACTOR);
-      value = (value / SPLIT_FACTOR).floor();
+      value = (value ~/ SPLIT_FACTOR).floor();
     }
 
     return result;
