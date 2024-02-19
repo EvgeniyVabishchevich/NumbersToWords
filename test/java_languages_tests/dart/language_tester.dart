@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:untitled1/src/tradukisto/internal/integer_to_string_converter.dart';
-import 'package:untitled1/src/tradukisto/internal/long_to_string_converter.dart';
-
-import 'package:untitled1/src/tradukisto/internal/container.dart';
+import 'package:numbers_to_words/src/internal/integer_to_string_converter.dart';
+import 'package:numbers_to_words/src/internal/long_to_string_converter.dart';
+import 'package:numbers_to_words/src/internal/container.dart';
 import 'language.dart';
 
 class LanguageTester {
@@ -18,94 +17,94 @@ class LanguageTester {
 
     if (type == "int") {
       switch (language) {
-        case LANGUAGE.BULGARIAN :
+        case LANGUAGE.bulgarian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.bulgarianContainer().getIntegerConverter()));
-        case LANGUAGE.CROATIAN:
+        case LANGUAGE.croatian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.croatianContainer().getIntegerConverter()));
-        case LANGUAGE.CZECH:
+        case LANGUAGE.czech:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.czechContainer().getIntegerConverter()));
-        case LANGUAGE.DUTCH:
+        case LANGUAGE.dutch:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.dutchContainer().getIntegerConverter()));
-        case LANGUAGE.ENGLISH:
+        case LANGUAGE.english:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.englishContainer().getIntegerConverter()));
-        case LANGUAGE.FRENCH:
+        case LANGUAGE.french:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.frenchContainer().getIntegerConverter()));
-        case LANGUAGE.GERMAN:
+        case LANGUAGE.german:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.germanContainer().getIntegerConverter()));
-        case LANGUAGE.HINDI:
+        case LANGUAGE.hindi:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.hindiContainer().getIntegerConverter()));
-        case LANGUAGE.ITALIAN:
+        case LANGUAGE.italian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.italianContainer().getIntegerConverter()));
-        case LANGUAGE.JAPANESE:
+        case LANGUAGE.japanese:
           stdout.writeln(returnWordsFromInt(numbers,
               Container.japaneseKanjiContainer().getIntegerConverter()));
-        case LANGUAGE.KAZAKH:
+        case LANGUAGE.kazakh:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.kazakhContainer().getIntegerConverter()));
-        case LANGUAGE.LATVIAN:
+        case LANGUAGE.latvian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.latvianContainer().getIntegerConverter()));
-        case LANGUAGE.POLISH:
+        case LANGUAGE.polish:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.polishContainer().getIntegerConverter()));
-        case LANGUAGE.PORTUGUESE:
+        case LANGUAGE.portuguese:
           stdout.writeln(returnWordsFromInt(numbers,
               Container.brazilianPortugueseContainer().getIntegerConverter()));
-        case LANGUAGE.RUSSIAN:
+        case LANGUAGE.russian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.russianContainer().getIntegerConverter()));
-        case LANGUAGE.SERBIAN:
+        case LANGUAGE.serbian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.serbianContainer().getIntegerConverter()));
-        case LANGUAGE.SLOVAK:
+        case LANGUAGE.slovak:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.slovakContainer().getIntegerConverter()));
-        case LANGUAGE.SLOVENE:
+        case LANGUAGE.slovene:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.sloveneContainer().getIntegerConverter()));
-        case LANGUAGE.SPANISH:
+        case LANGUAGE.spanish:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.spanishContainer().getIntegerConverter()));
-        case LANGUAGE.SWEDISH:
+        case LANGUAGE.swedish:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.swedishContainer().getIntegerConverter()));
-        case LANGUAGE.TURKISH:
+        case LANGUAGE.turkish:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.turkishContainer().getIntegerConverter()));
-        case LANGUAGE.UKRAINIAN:
+        case LANGUAGE.ukrainian:
           stdout.writeln(returnWordsFromInt(
               numbers, Container.ukrainianContainer().getIntegerConverter()));
       }
     } else {
       switch (language) {
-        case LANGUAGE.CROATIAN :
+        case LANGUAGE.croatian:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.croatianContainer().getLongConverter()!));
-        case LANGUAGE.ENGLISH:
+        case LANGUAGE.english:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.englishContainer().getLongConverter()!));
-        case LANGUAGE.HINDI:
+        case LANGUAGE.hindi:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.hindiContainer().getLongConverter()!));
-        case LANGUAGE.JAPANESE:
+        case LANGUAGE.japanese:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.japaneseKanjiContainer().getLongConverter()!));
-        case LANGUAGE.POLISH:
+        case LANGUAGE.polish:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.polishContainer().getLongConverter()!));
-        case LANGUAGE.SLOVENE:
+        case LANGUAGE.slovene:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.sloveneContainer().getLongConverter()!));
-        case LANGUAGE.SWEDISH:
+        case LANGUAGE.swedish:
           stdout.writeln(returnWordsFromLong(
               numbers, Container.swedishContainer().getLongConverter()!));
         default:
@@ -114,11 +113,19 @@ class LanguageTester {
     }
   }
 
-  String returnWordsFromInt(List<int> numbers, IntegerToStringConverter integerToStringConverter) {
-    return numbers.map((e) => integerToStringConverter.asWords(e)).toList().join(", ");
+  String returnWordsFromInt(
+      List<int> numbers, IntegerToStringConverter integerToStringConverter) {
+    return numbers
+        .map((e) => integerToStringConverter.asWords(e))
+        .toList()
+        .join(", ");
   }
 
-  String returnWordsFromLong(List<int> numbers, LongToStringConverter longToStringConverter) {
-    return numbers.map((e) => longToStringConverter.asWords(e)).toList().join(", ");
+  String returnWordsFromLong(
+      List<int> numbers, LongToStringConverter longToStringConverter) {
+    return numbers
+        .map((e) => longToStringConverter.asWords(e))
+        .toList()
+        .join(", ");
   }
 }

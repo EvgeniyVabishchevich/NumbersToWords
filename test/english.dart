@@ -1,12 +1,14 @@
 import 'package:parameterized_test/parameterized_test.dart';
 import 'package:test/test.dart';
-import 'package:untitled1/src/tradukisto/internal/container.dart';
-import 'package:untitled1/src/tradukisto/internal/integer_to_string_converter.dart';
+import 'package:numbers_to_words/src/internal/container.dart';
+import 'package:numbers_to_words/src/internal/integer_to_string_converter.dart';
 
 void main() {
-  IntegerToStringConverter integerToStringConverter = Container.englishContainer().intConverter;
+  IntegerToStringConverter integerToStringConverter =
+      Container.englishContainer().intConverter;
 
-  parameterizedTest('should convert numbers to words in English',
+  parameterizedTest(
+    'should convert numbers to words in English',
     [
       [0, "zero"],
       [1, "one"],
@@ -79,14 +81,28 @@ void main() {
       [1000000, "one million"],
       [2000000, "two million"],
       [5000000, "five million"],
-      [23437219, "twenty-three million four hundred thirty-seven thousand two hundred nineteen"],
+      [
+        23437219,
+        "twenty-three million four hundred thirty-seven "
+            "thousand two hundred nineteen"
+      ],
       [100000000, "one hundred million"],
-     // [121000000, "сто двадесет един милион"],
-      [123456789, "one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine"],
-      [322089890, "three hundred twenty-two million eighty-nine thousand eight hundred ninety"],
+      [
+        123456789,
+        "one hundred twenty-three million four hundred "
+            "fifty-six thousand seven hundred eighty-nine"
+      ],
+      [
+        322089890,
+        "three hundred twenty-two million eighty-nine "
+            "thousand eight hundred ninety"
+      ],
       [1000000000, "one billion"],
-      [2147483647, "two billion one hundred forty-seven million four hundred eighty-three thousand six hundred " +
-          "forty-seven"]
+      [
+        2147483647,
+        "two billion one hundred forty-seven "
+            "million four hundred eighty-three thousand six hundred forty-seven"
+      ],
     ],
     p2((int number, String text) {
       expect(integerToStringConverter.asWords(number), text);

@@ -1,14 +1,12 @@
-name: untitled1
-description: A starting point for Dart libraries or applications.
+name: numbers_to_words
+description: Numbers to words converter
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 
 environment:
   sdk: ^3.3.0
 
-# Add regular dependencies here.
 dependencies:
-  # path: ^1.8.0
   sprintf:
   big_decimal: '<1.0.0'
 
