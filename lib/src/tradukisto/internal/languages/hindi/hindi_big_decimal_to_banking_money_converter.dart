@@ -27,7 +27,7 @@ class HindidoubleToBankingMoneyConverter implements DoubleToStringConverter {
     validate(value);
 
     int units = value.toInt();
-    int subunits = ((value - units) * 100).floor();
+    int subunits = ((value - units) * 100).round();
 
     String tempSubunitSymbol = hindiValues.paiseSymbol();
     String? tempSubUnitWords = SUBUNIT_SEPARATOR + converter.asWords(subunits)!;

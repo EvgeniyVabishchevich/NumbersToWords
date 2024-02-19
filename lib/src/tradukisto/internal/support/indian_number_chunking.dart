@@ -11,11 +11,11 @@ class IndianNumberChunking extends NumberChunking {
     while (value > 0) {
       if (splitCounter < 1) {
         result.insert(0, (value % NumberChunking.SPLIT_FACTOR));
-        value = (value / NumberChunking.SPLIT_FACTOR).floor();
+        value = (value ~/ NumberChunking.SPLIT_FACTOR).floor();
         splitCounter++;
       } else {
         result.insert(0, value % INDIAN_SPLIT_FACTOR);
-        value = (value / INDIAN_SPLIT_FACTOR).floor();
+        value = (value ~/ INDIAN_SPLIT_FACTOR).floor();
         splitCounter++;
       }
     }
